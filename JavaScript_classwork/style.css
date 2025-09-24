@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+main{
+    display: flex;
+    justify-content: space-between;
+   margin: 25px;
+}
+body{
+    background-color: rgb(214, 209, 211);
+}
+button{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(133, 125, 128) ;
+    border-bottom: solid 2px blue;
+    border-bottom: solid 2px blue;
+}
+
+section{
+    margin-left: 10px;
+    display: none;
+}
+h3{
+    text-align:center;
+    
+
+}
