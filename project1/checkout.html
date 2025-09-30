@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - FreshBite Cafe</title>
+  <link rel="stylesheet" href="checkout.css">
+</head>
+
+<body>
+  <header>
+    <div class="head-section">
+      <img src="original_logo.png" alt="FreshBite logo">
+      <h2>FreshBite Cafe</h2>
+      <div class="nav-bar">
+        <ul>
+          <li><a href="customer-menu.html">Menu</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Media</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><button class="contact">Contact Us</button></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="checkout-container">
+    <!-- Order Summary -->
+    <section class="order-summary">
+      <h3>Your Order</h3>
+      <ul id="order-list">
+        <!-- Items will be injected with JS -->
+        <li>Pizza x1 - ₦2,500</li>
+        <li>Coffee x2 - ₦1,500</li>
+      </ul>
+      <p class="total">Total: <span id="order-total">₦4,000</span></p>
+    </section>
+
+    <!-- Checkout Form -->
+    <section class="checkout-form">
+      <h3>Checkout</h3>
+      <form id="checkoutForm">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="table">Table Number:</label>
+        <input type="number" id="table" required>
+
+        <label for="payment">Payment Method:</label>
+        <select id="payment" required>
+          <option value="">--Select--</option>
+          <option value="cash">Cash</option>
+          <option value="card">Card</option>
+        </select>
+
+        <button type="submit" class="confirm-btn">Confirm Order</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="address">
+      <p>FreshBite Bakery & Café, Plot 12 Admiralty Way, Lekki Phase 1, Lagos.</p>
+      <p>+234 812 345 6789 | Mon - Sat: 8AM- 8PM</p>
+    </div>
+  </footer>
+
+  <script src="checkout.js"></script>
+</body>
+
+</html>
