@@ -97,16 +97,16 @@ function atm(balance, action, amount){
         console.log(`checking balance`);
          if (balance >= amount){
            let newBalance = balance - amount;
-           console.log(` withdrawal of ${amount} successful, new balance is ${newBalance} `);
+           return `withdrawal of ${amount} successful, new balance is ${newBalance} `;
          }if (balance < amount){
-           console.log(` Insufficient funds!! `);
+           return` Insufficient funds!! `;
          }
          
     }else if (action=== "deposit"){
            let newBalance = balance + amount;
-          console.log(` Deposit of ${amount} successful, new balance is ${newBalance} `) ;
+          return ` Deposit of ${amount} successful, new balance is ${newBalance} ` ;
     }else{
-        console.log(`Enter a valid input!`);
+       return `Enter a valid input!`;
     }
 }
 console.log(atm(5500, "withdraw",450));
@@ -125,10 +125,10 @@ function personalAssistant(time, weather, dayType){
     
     const validWeather =["sunny","cloudy","rainy"]
     const validDayType=["workday","weekend", "holiday"];
-    if (!validDayType. includes(dayType.isToLowerCase())){
-    return `"Enter a valid weather sunny,rainy,cloudy"`
+    if (!validDayType. includes(dayType.toLowerCase())){
+    return `"Enter a valid daytype holiday,workday,weekend"`
         }
-    if (!validWeather. includes(weather.isToLowerCase())){
+    if (!validWeather. includes(weather.toLowerCase())){
     return `"Enter a valid weather sunny,rainy,cloudy"`
         }
     let message = "";
@@ -142,11 +142,26 @@ function personalAssistant(time, weather, dayType){
     }else if (time < 24){
         message += "It's time to sleep, pray before you sleep.";
     }else{
-        message +="You should be asleep by now!"
+        message +="You should be asleep by now!";
+        
     }
-   
+    // weather advice
+    if(weather === "sunny"){
+    message += "It's hot today, take a chilled drink and wear something light"
+   }else if (weather === "rainy"|| weather=== "cloudy"){
+    message += "Grab an umbrella, it seems like it is going to rain!"
+   }
+   if (dayType==="workday"){
+    message += "How do you intend to get to work today!"
+   }else if (dayType ==="weekend"){
+    message += "It's weekend, don't forget the task you have to do and also get enough rest!"
+   }else if (dayType=== "holiday"){
+    message +- "Completely forgeet about work, have fun with your friends and family."
+   }
 
+   return message;
 
 }
 console.log("");
-console.log(personalAssistant(6))
+console.log(personalAssistant(14, "rainy", "workday"));
+
