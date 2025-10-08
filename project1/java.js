@@ -8,7 +8,7 @@ loginBtn.addEventListener("click", function stafflogin(){
     if (username ==="" || password ==="" ){
         alert("This fields cannot be empty!!!")
     } else if(username === user && password === pass){
-        window.location.href = "../staff_dashboard.html"
+        window.location.href = "../liberian_dashboard.html"
         alert("Password accepted! Logged in!!!")
     } else {
         alert("Incorrect username or password!")
