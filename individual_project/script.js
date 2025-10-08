@@ -16,7 +16,10 @@ console.log(students);
 addStudentInfo() = () =>{
  
  
-if (name !== "" && age !== ""&& url !== ""&& subject1 !== ""&& subject2 !== ""&& subject3 !== ""){
+// if (name !== "" && age !== ""&& url !== ""&& subject1 !== ""&& subject2 !== ""&& subject3 !== ""){
     
+// }
+for (let i = 0; i< studentdata.length; i++){
+     document.getElementsById('tablebody').innerHTML
 }
 }
