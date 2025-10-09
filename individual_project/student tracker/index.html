@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="Form-container">
+        <h1>Student Performance Tracker</h1>
+        <div id="form">
+            <form id="student-form">
+                <input type="text" name="name" id="student-name" placeholder="Firstname      Lastname"><br><div class="name-response"></div>
+                <input type="number" id="student-age" placeholder="e.g 18"><br>
+                <div class="age-response"></div>
+                <input type="text" placeholder="e.g JSS2" id="student-class"><br>
+                <div id="classresponse"></div>
+               
+                <input type="url" placeholder="Add Student's image using a link" id="image"><br>
+                <div id="urlresponse"></div>
+                <input type="number" placeholder="Enter Score for Subject 1" id="sub1"><br>
+                <div id="sub1response"></div>
+                <input type="number" placeholder="Enter Score for Subject 2" id="sub2"><br>
+                <div id="sub2response"></div>
+                <input type="number" placeholder="Enter Score for Subject 3" id="sub3"><br>
+                <div id="subject3response"></div>
+                <div id="Error"></div>
+            <button id="submit" type="submit">Submit</button>
+            </form>
+           
+
+        </div>
+
+    </div>
+    <div class="search"><input type="text " placeholder="search for a studentby Name" id="search-bar" onkeyup="searchStudent()"> </div>
+    <div id="table-container">
+
+        <table id="table-content" class="table-container">
+            <thead id="table-head">
+                <tr>
+                    <th>Profile Picture</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Class</th>
+                    <th>Average</th>
+                    <th>Performance Category</th>
+                </tr>
+            </thead>
+            <tbody id="tablebody">
+                
+            </tbody>
+         
+        </table>
+    </div>
+
+</body>
+
+</html>

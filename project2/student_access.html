@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Book View</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: plum;
+    }
+    h1 {
+      text-align: center;
+    }
+    #searchInput {
+      width: 100%;
+      max-width: 400px;
+      padding: 10px;
+      margin: 20px auto;
+      display: block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #F2F2F2;
+    }
+    .available {
+      color: green;
+      font-weight: bold;
+    }
+    .unavailable {
+      color: red;
+      font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+      th {
+        display: none;
+      }
+      td {
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #ccc;
+      }
+      td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Library Book Catalog</h1>
+  <input type="text" id="searchInput" placeholder="Search by title, author, or category..." onkeyup="filterBooks()">
+  <table id="bookTable">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Category</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Books will be inserted here -->
+    </tbody>
+  </table>
+  <script>
+    const defaultBooks = [
+      {
+        id: 1,
+        title: "Things Fall Apart",
+        author: "Chinua Achebe",
+        category: "Fiction",
+        available: true
+      },
+      {
+        id: 2,
+        title: "Introduction to Algebra",
+        author: "J. Smith",
+        category: "Mathematics",
+        available: false
+      },
+      {
+        id: 3,
+        title: "The Joys of Motherhood",
+        author: "Buchi Emecheta",
+        category: "Literature",
+        available: true
+      },
+      {
+        id: 4,
+        title: "Chemistry Essentials",
+        author: "L. Brown",
+        category: "Science",
+        available: false
+      }
+    ];
+    // Load books from localStorage or use defaults
+    const books = JSON.parse(localStorage.getItem("books")) || defaultBooks;
+    const tableBody = document.querySelector("#bookTable tbody");
+    function renderBooks(bookList) {
+      tableBody.innerHTML = ""; // Clear table first
+      bookList.forEach(book => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+          <td data-label="Title">${book.title}</td>
+          <td data-label="Author">${book.author}</td>
+          <td data-label="Category">${book.category}</td>
+          <td data-label="Status">
+            <span class="${book.available ? 'available' : 'unavailable'}">
+              ${book.available ? 'Available' : 'Checked Out'}
+            </span>
+          </td>
+        `;
+        tableBody.appendChild(row);
+      });
+    }
+    function filterBooks() {
+      const query = document.getElementById("searchInput").value.toLowerCase();
+      const filtered = books.filter(book =>
+        book.title.toLowerCase().includes(query) ||
+        book.author.toLowerCase().includes(query) ||
+        book.category.toLowerCase().includes(query)
+      );
+      renderBooks(filtered);
+    }
+    // Initial render
+    renderBooks(books);
+  </script>
+</body>
+</html>
+</body>
+</html>
+
+
+
+
+
+
+
+
+s
+
+
+
+
+
+
+
+
+

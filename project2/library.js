@@ -7,9 +7,12 @@ loginBtn.addEventListener("click",function libarianLogin(){
      if (user=== "" || password === ""){
      alert("This field cannot be empty")
      }else if (user === userName && pass === password){
-        window.location.href="../liberian_dashboard.html"
+        window.location.href="../project2/liberian_dashboard.html"
         alert("Username and Password correct! Logged In!!")
      }else{
     alert("Invalid Credentials!")
      }
 });
+
+
+
