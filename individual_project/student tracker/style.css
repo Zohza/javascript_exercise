@@ -75,4 +75,31 @@ th, td{
 }
 
 
+.deletebuton{
+    background-color: brown;
+    color: black;
+}
+
+.excellent,
+.good,
+.needs{
+display: flex;
+border-radius: 10px;
+width: 50%;
+margin:  20px auto;
+}
+.excellent{
+   background-color: green;
+    color: black;
+}
+.good{
+   background-color: yellow;
+    color: black;
+}
+.needs{
+   background-color: red;
+    color: black;
+}
+
+
 
