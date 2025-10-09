@@ -82,8 +82,13 @@ function deleteStudent(index){
      localStorage.setItem('students',JSON.stringify(students));
      displayStudent(students)
 }
-
-
+searchStudent = () =>{
+     searchBar.addEventListener('keyup',()=>{
+          const searchText = searchBar.value.toLowerCase();
+          const filtered = students.filter( student =>student.name.toLowerCase().includes(searchText))
+          displayStudent(filtered);
+     })
+}
 function clearForm(){
      nameInput.value='';
     ageInput.value='';
@@ -92,6 +97,8 @@ function clearForm(){
      firstSubInput.value='';
      secondSubInput.value='';
      thirdSubInput.value='';
-  
+
+  displayStudent(students);
 }
+
 windows.onload = () => displayStudent(students);
