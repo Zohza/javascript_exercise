@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Word Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: none;
+    }
+
+    #wordcount {
+      margin-top: 10px;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .limit {
+      color: red;
+    }
+  </style>
 </head>
 <body>
-    
+  <h2>Live Word & Character Counter</h2>
+  
+  <textarea id="textArea" placeholder="Start typing..." onkeyup="wordCounter()"></textarea>
+  <p id="wordcount">Amount of Characters: 0 | Amount of Words: 0</p>
+
+  <script>
+    function wordCounter() {
+      let input = document.getElementById('textArea').value.trim();
+      let character = input.length;
+      let words = input === "" ? 0 : input.split(/\s+/).length;
+
+      const wordCountDisplay = document.getElementById('wordcount');
+      wordCountDisplay.textContent = `Amount of Characters: ${character} | Amount of Words: ${words}`;
+
+      // Highlight in red if more than 200 characters
+      if (character > 200) {
+        wordCountDisplay.classList.add('limit');
+      } else {
+        wordCountDisplay.classList.remove('limit');
+      }
+    }
+  </script>
 </body>
 </html>
